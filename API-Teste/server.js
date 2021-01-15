@@ -6,6 +6,7 @@ const helmet = require('helmet');
 
 // Proxy request - Users
 var user_Controller = require('./controllers/user')
+app.get('/user', user_Controller.response)
 app.get('/user/*', user_Controller.response)
 app.post('/user', user_Controller.response)
 app.put('/user', user_Controller.response)

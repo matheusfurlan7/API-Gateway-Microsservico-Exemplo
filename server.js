@@ -1,12 +1,11 @@
 const express = require('express')
 const app = express()
-
-var logger = require('morgan');
 const helmet = require('helmet');
+var logger = require('morgan');
+var redirection_Roter = require('./Redirection/index')
 
-// Proxy request - User
-var users = require('./Redirection/Users/Users')
-app.use('/api/users/', users);
+// Proxy request - Router
+redirection_Roter.Router(app);
 
 app.use(logger('dev'))
 app.use(helmet())
